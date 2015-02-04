@@ -3,6 +3,8 @@
 var events = require('../models/events');
 var validator = require('validator');
 
+// useless comments
+
 // Date data that would be useful to you
 // completing the project These data are not
 // used a first.
