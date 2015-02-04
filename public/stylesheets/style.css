@@ -7,6 +7,14 @@ a {
   color: #00B7FF;
 }
 
+
 .form-errors {
 	color: red;
+}
+
+footer {
+  background-color: #eee;
+  padding: 1em;
+  border: 1px solid #ddd;
+  margin: 2em 0;
 }
