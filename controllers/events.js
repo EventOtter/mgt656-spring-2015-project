@@ -3,6 +3,8 @@
 var events = require('../models/events');
 var validator = require('validator');
 
+// useless comments
+
 // Date data that would be useful to you
 // completing the project These data are not
 // used a first.
@@ -99,8 +101,12 @@ function rsvp (request, response){
     contextData.errors.push('Invalid email');
     response.render('event-detail.html', contextData);    
   }
-
 }
+function api(request,response){
+  var output = {events:events.all};
+  response.send(output)
+}
+
 
 /**
  * Export all our functions (controllers in this case, because they
@@ -111,5 +117,6 @@ module.exports = {
   'eventDetail': eventDetail,
   'newEvent': newEvent,
   'saveEvent': saveEvent,
-  'rsvp': rsvp
+  'rsvp': rsvp,
+  'api': api
 };
