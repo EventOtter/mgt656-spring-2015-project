@@ -7,6 +7,7 @@ a {
   color: #00B7FF;
 }
 
+
 .form-errors {
 	color: red;
 }
@@ -14,7 +15,13 @@ a {
 footer {
   background-color: #eee;
   padding: 1em;
+<<<<<<< HEAD
   border: 1px soid #ddd;
   margin: 2em 0;
 }
 }
+=======
+  border: 1px solid #ddd;
+  margin: 2em 0;
+}
+>>>>>>> d1a70162c770bebd39928bdf73760c20c42cfc81
