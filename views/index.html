@@ -12,6 +12,20 @@
   </p>
   <img id="logo" src="http://i1378.photobucket.com/albums/ah90/pingtingpt/LOGO_zps32dbd7f1.png">
   <p>
+    Events:
+    <ul>
+    {% for event in events %}
+      <li class="event" id="event-{{event.id}}">
+        {% if event.date < now %} Expired: <strike> {% endif %}
+        <a herf="/events/{{event.id}}"><b>{{event.title}}.</b></a> {{event.attending.length}} attending so far.
+        {% if event.date < now %} </strike> {% endif %}
+        <br>
+        <time datetime="{{event.date}}">{{event.date|prettyDate}}.</time>
+      </li>
+    {% endfor %}
+    </ul>
+  </p>
+  <p>
     Check out the <a href="/about">About us</a> page
     as well as the <a href="/events">Events</a> page.
   </p>
