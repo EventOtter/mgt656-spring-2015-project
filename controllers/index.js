@@ -8,7 +8,7 @@ var events = require('../models/events');
 function index (request, response) {
   var contextData = {
     'title': 'EventOtter',
-    'tagline': 'You will never feel bored here.',
+    'tagline': 'You will have a lot of fun here.',
     'events': events.all,
     'now': new Date(),
   };
