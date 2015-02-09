@@ -83,8 +83,9 @@ function eventDetail (request, response) {
   var ev = events.getById(parseInt(request.params.id));
   if (ev === null) {
     response.status(404).send('No such event');
+  } else {
+    response.render('event-detail.html', {event: ev, title: ev.title, tagline: ""});
   }
-  response.render('event-detail.html', {event: ev, title: ev.title, tagline: ""});
 }
 
 function rsvp (request, response){
