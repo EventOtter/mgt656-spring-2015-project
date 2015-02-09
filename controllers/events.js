@@ -84,7 +84,7 @@ function eventDetail (request, response) {
   if (ev === null) {
     response.status(404).send('No such event');
   }
-  response.render('event-detail.html', {event: ev});
+  response.render('event-detail.html', {event: ev, title: ev.title, tagline: ""});
 }
 
 function rsvp (request, response){
