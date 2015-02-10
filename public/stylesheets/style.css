@@ -13,12 +13,12 @@ a {
 }
 
 header {
-  margin: 1em 0;
-  font-size: 250%;
+  font-size: 200%;
+  color: #B2D234;
 }
 
 footer {
-  background-color: #eee;
+  background-color: #D8F6CE;
   padding: 1em;
   border: 1px soid #ddd;
   margin: 2em 0;
