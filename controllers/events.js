@@ -59,9 +59,7 @@ function newEvent(request, response){
 function saveEvent(request, response){
   var contextData = {errors: []};
 
-  if (validator.isUrl(request.body.image,'http://', ‘https://') === false) {
-    contextData.errors.push('Your image URL must begin with ‘http://’ or ‘https://’ and end with ‘.gif’ or ‘.png’.');
-  }
+ 
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
