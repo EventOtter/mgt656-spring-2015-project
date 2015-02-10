@@ -59,11 +59,30 @@ function newEvent(request, response){
 function saveEvent(request, response){
   var contextData = {errors: []};
 
+  if (validator.isUrl(request.body.image,'http://', ‘https://') === false) {
+    contextData.errors.push('Your image URL must begin with ‘http://’ or ‘https://’ and end with ‘.gif’ or ‘.png’.');
+  }
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
-
-
+  if (validator.isLength(request.body.location, 0, 50) === false) {
+      contextData.errors.push('Your location should be less than 50 charactars.');
+  }
+  if (validator.isNumeric(request.body.year, 2015, 2016) === false) {
+      contextData.errors.push('Your year must be 2015 or 2016');
+  }
+  if (validator.isNumeric(request.body.month, 0, 11) === false) {
+      contextData.errors.push('Your month must be between 0 to 11');
+  }
+    if (validator.isNumeric(request.body.hour, 0, 23) === false) {
+      contextData.errors.push('Your hour must be between 0 to 23');
+  }
+  
+   if (validator.isNumeric(request.body.minute, 0, 30) === false) {
+      contextData.errors.push('Your minute must be o or 30');
+  }
+  
+  
   if (contextData.errors.length === 0) {
     var newEvent = {
       title: request.body.title,
