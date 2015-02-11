@@ -1,55 +1,78 @@
 <html>
     <head><title>This is llg-team's report.</title></head>
-    <body>
-Team EventOtter (GLL in our profile pages) Sprint 1 Report
-Xulin Guo(xulin.guo@yale.edu), Pingting Li(pingting.li@yale.edu), Lin Lin(victoria.lin@yale.edu)
+<body>
+<h1>  Team EventOtter (GLL in our profile pages) Sprint 2 Report</h1>
 
-Burn down chart
-
-
-Completed stories in this sprint(if any)
-1.As a user,  I can visit your site and it looks awsome: (1)all pages are in  Bootstrap CSS format (2)all pages have a footer with links to homepage and about us
-2.As a user, I can visit the url at /about and see information about your company
-3. As any user, I can visit the url at / and see your homepage, it has (1)Your team logo; (2)A an unordered list of events, including their details;(3)I can click a link to take me to /events/new. The link has id="new"
-4.As a user, I can visit your API at /api/events and retrieve an object with key events containing all events in JSON format.
-
-
-What have been achieved, including roadblocks
-Achieved: 
-Create an API respond in JSON format
-Add span tag with id attribute in About page
-Add headshots in About page
-Add footer to each page with links to Home and About us
-All pages are in Bootstrap CSS format now
+<p> Xulin Guo(xulin.guo@yale.edu), Pingting Li(pingting.li@yale.edu), Lin Lin(victoria.lin@yale.edu)</p>
+Team EventOtter (GLL in our profile pages) Sprint 2 Report
 
 
 
-Roadblocks: 
-The test that passed at branch could not pass at master
-How could other team members merge the different team member’s changes
-Deploy branch changes to Heroku
+ Burn down chart<br>
 
+<img src="http://i1378.photobucket.com/albums/ah90/pingtingpt/burndownchart_zps27e2d8ee.jpg" border="0" alt=" burn down chart"/>
 
-Current backlog
-
-add team information and image of each person at "/about"
-add time tags for events at '/'
-add a link to detail page for every event title at '/'
-display events with titles and date
-create team logo
-display team logo at '/'
-search API by keyword in title
+Completed stories in this sprint(if any)<br>
+1. As any user, I can visit the url at / and see your homepage, it has (1)Your team logo; (2)A an unordered list of events, including their details;(3)I can click a link to take me to /events/new. The link has id="new"<br>
+2. As a user, I can visit your API at /api/events and retrieve an object with key events containing all events in JSON format.<br>
+3. As a user I can visit your page for creating new events at /events/new<br>
+It should have a form for creating events. The form should have attribute method="POST".<br>
+I must specify the following attributes of an event: title, location, image, year, month, day, hour, and minute.<br>
+When submitted, the form should be validated<br>
+If the form was not valid, I am taken back the form and the errors are shown on the form<br>
 
 
 
-Expected  work before next report
-add team information and image of each person at "/about"
-add time tags for events at '/'
-add a link to detail page for every event title at '/'
-display events with titles and date
-create team logo
-display team logo at '/'
-search API by keyword in title
+What have been achieved, including roadblocks<br>
+Achieved: <br>
+Create an API respond in JSON format<br>
+Add span tag with id attribute in About page<br>
+Add headshots in About page<br>
+Add footer to each page with links to Home and About us<br>
+All pages are in Bootstrap CSS format now<br>
+Add team information and image of each person at "/about"<br>
+Add time tags for events at '/'<br>
+Add a link to detail page for every event title at '/'<br>
+Display events with titles and date<br>
+Display team logo at '/'<br>
+Search API by keyword in title<br>
+Add header<br>
+Revise footer with all pages<br>
+Add validation for new event fields<br>
+Create team report link<br>
+Add RSVP field to event detail page<br>
+
+
+Create a form for creating events<br>
+Specify the following attributes of an event: title, location, image, year, month, day, hour, and minute<br>
+Validate the form when submitted<br>
+Show error messages if the form was not valid<br>
+
+
+
+Roadblocks: <br>
+Don’t understand how the forms contents are captured by functions in event controller <br>
+Don’t know how to create an input element to submit the event<br>
+Don’t know why we can’t the pass the About Us test<br>
+Don’t understand why we can’t pass the test “should have appropriate form fields and labels”<br>
+
+Current backlog<br>
+
+Create an input element to submit the event. This element should have id="submit" and type="submit".<br>
+Redirect users that submit valid events<br>
+
+
+
+Expected  work before next report<br>
+Complete the last story so that user could RSVP to an event they are interested in<br>
+Beautify the format of the website<br>
+
+Fix the About Page and pass the test<br>
+Fix the event creation page and pass the test on form fields<br>
+Make the website nicer
+
+
+
 
     </body>
 </html>
