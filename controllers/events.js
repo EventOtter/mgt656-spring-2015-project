@@ -63,19 +63,36 @@ function saveEvent(request, response){
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
-  if (validator.isLength(request.body.location, 0, 50) === false) {
+  if (validator.isLength(request.body.location, 5, 50) === false) {
       contextData.errors.push('Your location should be less than 50 charactars.');
   }
-  if (validator.isNumeric(request.body.year, 2015, 2016) === false) {
+   if (validator.isURL(request.body.image) === false) {
+    contextData.errors.push('Your image should be an URL');
+  }
+  if (validator.isNumeric(request.body.year) === false) {
+      contextData.errors.push('Your year must be an integer');
+  }
+   if (validator.isIn(request.body.year, 2015, 2016) === false) {
       contextData.errors.push('Your year must be 2015 or 2016');
   }
-  if (validator.isNumeric(request.body.month, 0, 11) === false) {
-      contextData.errors.push('Your month must be between 0 to 11');
+    if (validator.isNumeric(request.body.month) === false) {
+      contextData.errors.push('Your month must be an integer');
   }
-    if (validator.isNumeric(request.body.hour, 0, 23) === false) {
+   if (validator.isIn(request.body.month, 1,2,3,4,5,6,7,8,9,10,11,12) === false) {
+      contextData.errors.push('Your month must be between 1 to 12');
+  }
+  if (validator.isNumeric(request.body.day) === false) {
+      contextData.errors.push('Your day must be an integer');
+  }
+  if (validator.isIn(request.body.day,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31) === false) {
+      contextData.errors.push('Your day must be between 1 to 31');
+  }
+    if (validator.isNumeric(request.body.hour) === false) {
+      contextData.errors.push('Your hour must be an integer');
+  }
+  if (validator.isIn(request.body.hour,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23) === false) {
       contextData.errors.push('Your hour must be between 0 to 23');
   }
-  
    if (validator.isNumeric(request.body.minute, 0, 30) === false) {
       contextData.errors.push('Your minute must be o or 30');
   }
