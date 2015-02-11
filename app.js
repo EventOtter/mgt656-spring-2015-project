@@ -23,6 +23,9 @@ app.get('/events', eventControllers.listEvents);
 app.get('/events/new', eventControllers.newEvent);
 app.get('/events/:id', eventControllers.eventDetail);   // should be after '/events/new'
 app.get('/api/events', eventControllers.api);
+app.get('/team-report', function(req, res) {
+    res.render('team-report.html', null);
+});
 app.post('/events/new', eventControllers.saveEvent);
 
 module.exports = app;
