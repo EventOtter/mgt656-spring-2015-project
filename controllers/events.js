@@ -11,18 +11,18 @@ var validator = require('validator');
 //
 var allowedDateInfo = {
   months: {
-    0: 'January',
-    1: 'February',
-    2: 'March',
-    3: 'April',
-    4: 'May',
-    5: 'June',
-    6: 'July',
-    7: 'August',
-    8: 'September',
-    9: 'October',
-    10: 'November',
-    11: 'December'
+    1: 'January',
+    2: 'February',
+    3: 'March',
+    4: 'April',
+    5: 'May',
+    6: 'June',
+    7: 'July',
+    8: 'August',
+    9: 'September',
+    10: 'October',
+    11: 'November',
+    12: 'December'
   },
   minutes: [0, 30],
   hours: [
@@ -72,25 +72,25 @@ function saveEvent(request, response){
   if (validator.isNumeric(request.body.year) === false) {
       contextData.errors.push('Your year must be an integer');
   }
-   if (validator.isIn(request.body.year, 2015, 2016) === false) {
+   if (validator.isIn(request.body.year, [2015, 2016]) === false) {
       contextData.errors.push('Your year must be 2015 or 2016');
   }
     if (validator.isNumeric(request.body.month) === false) {
       contextData.errors.push('Your month must be an integer');
   }
-   if (validator.isIn(request.body.month, 1,2,3,4,5,6,7,8,9,10,11,12) === false) {
+   if (validator.isIn(request.body.month, [1,2,3,4,5,6,7,8,9,10,11,12]) === false) {
       contextData.errors.push('Your month must be between 1 to 12');
   }
   if (validator.isNumeric(request.body.day) === false) {
       contextData.errors.push('Your day must be an integer');
   }
-  if (validator.isIn(request.body.day,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31) === false) {
+  if (validator.isIn(request.body.day,[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]) === false) {
       contextData.errors.push('Your day must be between 1 to 31');
   }
     if (validator.isNumeric(request.body.hour) === false) {
       contextData.errors.push('Your hour must be an integer');
   }
-  if (validator.isIn(request.body.hour,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23) === false) {
+  if (validator.isIn(request.body.hour,[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]) === false) {
       contextData.errors.push('Your hour must be between 0 to 23');
   }
    if (validator.isNumeric(request.body.minute, 0, 30) === false) {
