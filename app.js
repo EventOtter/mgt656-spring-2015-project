@@ -27,6 +27,6 @@ app.get('/team-report', function(req, res) {
     res.render('team-report.html', null);
 });
 app.post('/events/new', eventControllers.saveEvent);
-app.post('/events/:id',eventControllers.eventDetail);
+app.post('/events/:id', eventControllers.eventDetail);
 
 module.exports = app;
