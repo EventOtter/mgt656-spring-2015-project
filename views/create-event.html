@@ -16,19 +16,24 @@
 	<form id="create-event" method="POST">
     <label for="title">Event title:</label>
     <input type="text" name="title">
+    <br> </br>
     
     <label for="location">Event location:</label>
     <input type="text" name="location">
+    <br> </br>
     
     <label for="image">Event image:</label>
     <input type="text" name="imgage">
+    <br> </br>
+    
     
     <label for="year">Event year:</label>
     <select id="year"
          name="year" />
         <option>2015</option>      
         <option>2016</option>      
-    </select> 
+    </select>
+    <br> </br>
     
     <label for="month">Event month:</label>
     <select id="month"
@@ -45,10 +50,11 @@
         <option>October</option>      
         <option>November</option>      
         <option>December</option>      
-  </select>
+    </select>
+    <br> </br>
     
     <label for="day">Event day:</label>
-<select id="day"
+    <select id="day"
           name="day" />
         <option>1</option>      
         <option>2</option>      
@@ -81,7 +87,8 @@
         <option>29</option>      
         <option>30</option>      
         <option>31</option>      
-  </select>
+    </select>
+    <br> </br>
      
     <label for="hour">Event hour:</label>
     <select id="hour"
@@ -110,8 +117,8 @@
         <option>21</option>      
         <option>22</option>      
         <option>23</option>      
-  
-  </select>
+    </select>
+    <br> </br>
     
     <label for="minute">Event minute:</label>
     <select id="minute"
@@ -119,7 +126,10 @@
         <option>0</option>      
         <option>30</option>      
     </select> 
+    <br> </br>
     
+
+    <input type="submit" value="subtmit" id="submit">
 
   </form>
 {% endblock %}
