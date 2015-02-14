@@ -118,31 +118,34 @@ function eventDetail (request, response) {
   if (ev === null) {
     response.status(404).send('No such event');
   } else {
-    response.render('event-detail.html', {event: ev, title: ev.title, tagline: ""});
+    response.render('event-detail.html', {event: ev, title: ev.title, tagline: ''});
   }
 }
 
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
-  if (ev === null) {
+console.log('added');
+if (ev === null) {
     response.status(404).send('No such event');
   }
-
-  if(validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf("yale.edu")>-1){
+  if(validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf('yale.edu')>-1){
+    console.log('added');
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
   }else{
+    console.log('NOT added');
+    
     var contextData = {errors: [], event: ev};
     contextData.errors.push('Invalid email');
     response.render('event-detail.html', contextData);    
   }
 }
 function api(request,response){
-  var url = require("url");
+  var url = require('url');
   var keyword = url.parse(request.url, true).query.search;
   var output = null;
-  if (keyword != null) {
-    var keywords = keyword.toLowerCase().split(" ");
+  if (keyword !== null) {
+    var keywords = keyword.toLowerCase().split(' ');
     console.log(keywords);
     output = {events:[]};
     for (var i=0; i < events.all.length; i++) {
