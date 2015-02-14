@@ -124,22 +124,25 @@ function eventDetail (request, response) {
 
 function rsvp (request, response){
   var ev = events.getById(parseInt(request.params.id));
-console.log('added');
-if (ev === null) {
+  
+if (ev === null) 
+  {
     response.status(404).send('No such event');
   }
-  if(validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf('yale.edu')>-1){
-    console.log('added');
+  else if(validator.isEmail(request.body.email) && request.body.email.toLowerCase().indexOf('yale.edu')>-1)
+  {
     ev.attending.push(request.body.email);
     response.redirect('/events/' + ev.id);
-  }else{
+  }
+  else
+  {
     console.log('NOT added');
-    
     var contextData = {errors: [], event: ev};
     contextData.errors.push('Invalid email');
     response.render('event-detail.html', contextData);    
   }
 }
+
 function api(request,response){
   var url = require('url');
   var keyword = url.parse(request.url, true).query.search;
