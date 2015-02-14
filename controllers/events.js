@@ -69,6 +69,11 @@ function saveEvent(request, response){
    if (validator.isURL(request.body.image) === false) {
     contextData.errors.push('Your image should be an URL');
   }
+  var img_length = request.body.image.length;
+  if (img_length < 4 || (request.body.image.substr(img_length - 4, 4) != ".gif" &&
+      request.body.image.substr(img_length - 4, 4) != ".png")) {
+    contextData.errors.push('Your image should be a gif or png');
+  }
   if (validator.isNumeric(request.body.year) === false) {
       contextData.errors.push('Your year must be an integer');
   }
@@ -78,7 +83,7 @@ function saveEvent(request, response){
     if (validator.isNumeric(request.body.month) === false) {
       contextData.errors.push('Your month must be an integer');
   }
-   if (validator.isIn(request.body.month, [1,2,3,4,5,6,7,8,9,10,11,12]) === false) {
+   if (validator.isIn(request.body.month, [0,1,2,3,4,5,6,7,8,9,10,11]) === false) {
       contextData.errors.push('Your month must be between 1 to 12');
   }
   if (validator.isNumeric(request.body.day) === false) {
@@ -99,7 +104,23 @@ function saveEvent(request, response){
   
   
   if (contextData.errors.length === 0) {
+    var new_id = 0;
+    while (true) {
+      var found = false;
+      for (var event in events) {
+        if (new_id == event.id) {
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
+        break;
+      } else {
+        new_id++;
+      }
+    }
     var newEvent = {
+      id: new_id,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
@@ -107,7 +128,7 @@ function saveEvent(request, response){
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    response.redirect('/events/' + new_id);
   }else{
     response.render('create-event.html', contextData);
   }
@@ -147,7 +168,7 @@ function api(request,response){
   var url = require('url');
   var keyword = url.parse(request.url, true).query.search;
   var output = null;
-  if (keyword !== null) {
+  if (keyword) {
     var keywords = keyword.toLowerCase().split(' ');
     console.log(keywords);
     output = {events:[]};
