@@ -1,30 +1,27 @@
 <html>
     <head>
-        <title>This is llg-team's report.</title>
+        <title>This is gll-team's report.</title>
     <style>
         h1{text-align:center;font-size:150%;}
         h2{font-weight:bold;font-size: 100%;}
     </style>
     </head>
 <body>
-<h1>  Team EventOtter (GLL in our profile pages) Sprint 2 Report</h1>
+<h1>  Team EventOtter (GLL in our profile pages) Sprint 3 Report</h1>
 
 <p> Xulin Guo(xulin.guo@yale.edu), Pingting Li(pingting.li@yale.edu), Lin Lin(victoria.lin@yale.edu)</p>
 
 
 <h2>Burn down chart<h2>
-<img src="http://i1378.photobucket.com/albums/ah90/pingtingpt/burndownchart_zps27e2d8ee.jpg" border="0" alt=" burn down chart"/><br>
+<img src="https://drive.google.com/file/d/0B1iluJ2NZpkpa1JRUTVfbjBNWDA/view?usp=sharing"/><br>
 
 <br>
 <p>
 <h2>Completed stories in this sprint(if any)</h2>
-1. As any user, I can visit the url at / and see your homepage, it has (1)Your team logo; (2)A an unordered list of events, including their details;(3)I can click a link to take me to /events/new. The link has id="new"<br>
-2. As a user, I can visit your API at /api/events and retrieve an object with key events containing all events in JSON format.<br>
-3. As a user I can visit your page for creating new events at /events/new<br>
-It should have a form for creating events. The form should have attribute method="POST".<br>
-I must specify the following attributes of an event: title, location, image, year, month, day, hour, and minute.<br>
-When submitted, the form should be validated<br>
-If the form was not valid, I am taken back the form and the errors are shown on the form<br>
+As an attendee, I can visit the event detail page to RSVP for an event<br>
+- I can submit my email address by filling in a form. If I submit an email address that does not end in "@yale.edu", the form is redisplayed with an error message. <br>
+- If I submit a valid email address, I see the event detail page again and it shows my email address on there along with the other attendees.<br>
+
 </p>
 
 <br>
@@ -32,47 +29,18 @@ If the form was not valid, I am taken back the form and the errors are shown on 
 <h2>What have been achieved, including roadblocks</h2>
 Achieved: <br>
 Create an API respond in JSON format<br>
-Add span tag with id attribute in About page<br>
-Add headshots in About page<br>
-Add footer to each page with links to Home and About us<br>
-All pages are in Bootstrap CSS format now<br>
-Add team information and image of each person at "/about"<br>
-Add time tags for events at '/'<br>
-Add a link to detail page for every event title at '/'<br>
-Display events with titles and date<br>
-Display team logo at '/'<br>
-Search API by keyword in title<br>
-Add header<br>
-Revise footer with all pages<br>
-Add validation for new event fields<br>
-Create team report link<br>
-Add RSVP field to event detail page<br>
-Create a form for creating events<br>
-Specify the following attributes of an event: title, location, image, year, month, day, hour, and minute<br>
+Enable the event creation form to be submitted<br>
 Validate the form when submitted<br>
 Show error messages if the form was not valid<br>
+Create a RSVP form in event detail page<br>
+Validate the RSVP email to be a yale email address<br>
 </p>
 <br>
+
 <p>
-<h2>Roadblocks:</h2>
-Don’t understand how the forms contents are captured by functions in event controller <br>
-Don’t know how to create an input element to submit the event<br>
-Don’t know why we can’t the pass the About Us test<br>
-Don’t understand why we can’t pass the test “should have appropriate form fields and labels”<br>
-</p>
-<br>
-<p>
-<h2>Current backlog</h2>
-Create an input element to submit the event. This element should have id="submit" and type="submit".<br>
-Redirect users that submit valid events<br>
-</p>
-<br>
-<p>
-<h2>Expected  work before next report</h2>
-Complete the last story so that user could RSVP to an event they are interested in<br>
-Beautify the format of the website<br>
-Fix the About Page and pass the test<br>
-Fix the event creation page and pass the test on form fields<br>
+<h2>Project retrospective</h2>
+Stand-up meeting is very efficient to keep everyone on the same page and adjust workload<br>
+Learning from how others complete user stories helps to complete own story more efficeintly<br>
 </p>
 </body>
 </html>
